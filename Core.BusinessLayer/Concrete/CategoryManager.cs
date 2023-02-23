@@ -1,4 +1,5 @@
 ﻿using Core.BusinessLayer.Abstract;
+using Core.DataAccessLayer.Abstract;
 using Core.DataAccessLayer.EntityFramework;
 using Core.EntityLayer.Concrete;
 using System;
@@ -12,34 +13,35 @@ namespace Core.BusinessLayer.Concrete
     public class CategoryManager : ICategoryService
     {
 
-        private readonly EfCategoryRepository efCategoryRepositorys;
-        public CategoryManager()
+        private readonly ICategoryDAL _categoryDal;
+        public CategoryManager(ICategoryDAL categoryDal)
         {
-            efCategoryRepositorys= new EfCategoryRepository();
+            
+            _categoryDal = categoryDal;
         }
         public void CategoryAdd(Category category)
         {
-            efCategoryRepositorys.Insert(category);
+            _categoryDal.Insert(category);
         }
 
         public void CategoryDelete(Category category)
         {
-            efCategoryRepositorys.Delete(category);
+            _categoryDal.Delete(category);
         }
 
         public void CategoryUpdate(Category category)
         {
-            efCategoryRepositorys.Update(category);
+            _categoryDal.Update(category);
         }
 
         public Category GetById(int id)
         {
-            return efCategoryRepositorys.GetByID(id);
+            return _categoryDal.GetByID(id);
         }
 
         public List<Category> GetList()
         {
-            return efCategoryRepositorys.GetListAll();
+            return _categoryDal.GetListAll();
         }
     }
 }
