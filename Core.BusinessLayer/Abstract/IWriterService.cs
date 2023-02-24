@@ -5,10 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Core.DataAccessLayer.Abstract
+namespace Core.BusinessLayer.Abstract
 {
-    public interface IBlogDAL:IGenericDAL<Blog>
+    public interface IWriterService
     {
-        List<Blog> GetListWithCategory();
+        void WriterAdd(Writer writer);
     }
 }

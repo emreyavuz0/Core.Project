@@ -5,14 +5,13 @@
 
 
 
-<!DOCTYPE html>
-<html lang="zxx">
+
 
 <head>
 	<title>Weblog a Blogging Category Bootstrap responsive WebTemplate | Blog3 :: w3layouts</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="utf-8">
-	<meta name="keywords" content="Weblog a Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+	<meta name="keywords" content="Weblog a Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 
 	<script>
@@ -29,34 +28,62 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<link href="~/CoreBlogTema/web/css/style.css" rel='stylesheet' type='text/css' />
 	<link href="~/CoreBlogTema/web/css/fontawesome-all.css" rel="stylesheet">
 	<link href="//fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800"
-	    rel="stylesheet">
+		  rel="stylesheet">
 </head>
-
-<body>
 	<!--Header-->
-
 	<header>
-		@await Html.PartialAsync("Partial2")
-		@await Html.PartialAsync("Partial1")
-	
+		<div class="top-bar_sub_w3layouts container-fluid">
+			<div class="row">
+				<div class="col-md-4 logo text-left">
+					<a class="navbar-brand" href="index.html">
+						<i class="fab fa-linode"></i> Weblog
+					</a>
+				</div>
+				@await Html.PartialAsync("HeaderPartial")
+				<div class="col-md-4 log-icons text-right">
+
+					<ul class="social_list1 mt-3">
+
+						<li>
+							<a href="#" class="facebook1 mx-2">
+								<i class="fab fa-facebook-f"></i>
+
+							</a>
+						</li>
+						<li>
+							<a href="#" class="twitter2">
+								<i class="fab fa-twitter"></i>
+
+							</a>
+						</li>
+						<li>
+							<a href="#" class="dribble3 mx-2">
+								<i class="fab fa-dribbble"></i>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="pin">
+								<i class="fab fa-pinterest-p"></i>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		@await Html.PartialAsync("NavbarPartial")
 	</header>
 	<!--//header-->
-	<!--/banner-->
-	<div class="banner-inner">
-	</div>
-	<ol class="breadcrumb">
-		<li class="breadcrumb-item">
-			<a href="index.html">Home</a>
-		</li>
-		<li class="breadcrumb-item active">Blog3</li>
-	</ol>
-	<!--//banner-->
-	<!--footer-->
-	<footer>
-		@await Html.PartialAsync("Partial3")
-	</footer>
-	<!---->
 
+
+	<!--/main-->
+	<body>
+		@RenderBody()
+	</body>
+	<!--//main-->
+	<!--footer-->
+	@await Html.PartialAsync("FooterPartial")
+	<!---->
 	<!-- js -->
 	<script src="~/CoreBlogTema/web/js/jquery-2.2.3.min.js"></script>
 	<!-- //js -->
@@ -79,11 +106,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		$(document).ready(function () {
 			/*
 									var defaults = {
-							  			containerID: 'toTop', // fading element id
+											containerID: 'toTop', // fading element id
 										containerHoverID: 'toTopHover', // fading element hover id
 										scrollSpeed: 1200,
-										easingType: 'linear' 
-							 		};
+										easingType: 'linear'
+										};
 									*/
 
 			$().UItoTop({
@@ -99,8 +126,3 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!-- //Custom-JavaScript-File-Links -->
 	<script src="~/CoreBlogTema/web/js/bootstrap.js"></script>
 
-
-</body>
-
-</html>
-@RenderBody()
