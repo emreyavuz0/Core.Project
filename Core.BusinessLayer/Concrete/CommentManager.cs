@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -19,13 +20,14 @@ namespace Core.BusinessLayer.Concrete
             _commentDal = commentDal;
         }
 
-        public void CommentAdd(Comment category)
+        public void CommentAdd(Comment comment)
         {
-            throw new NotImplementedException();
+            _commentDal.Insert(comment);
         }
 
         public List<Comment> GetList(int id)
         {
+            
             return _commentDal.GetListAll(x => x.BlogId == id);
         }
     }

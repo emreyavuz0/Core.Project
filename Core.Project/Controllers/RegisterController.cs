@@ -19,6 +19,7 @@ namespace Core.Project.Controllers
         [HttpPost]
         public IActionResult Index(Writer p)
         {
+           
             WriterValidator vm = new WriterValidator();
             ValidationResult results = vm.Validate(p);
             if (results.IsValid)
@@ -37,5 +38,6 @@ namespace Core.Project.Controllers
             }
             return View();
         }
+      
     }
 }
