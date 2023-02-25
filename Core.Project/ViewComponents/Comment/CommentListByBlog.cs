@@ -10,8 +10,10 @@ namespace Core.Project.ViewComponents.Comment
         CommentManager cm = new CommentManager(new EfCommentRepository());
         
         public IViewComponentResult Invoke(int id)
-        {
+        { 
+            
             var values = cm.GetList(id);
+            ViewBag.CommentCount = values.Count;
             return View(values);
         }
     }

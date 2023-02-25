@@ -21,6 +21,7 @@ namespace Core.DataAccessLayer.Concrete
         public DbSet<Writer> writers { get; set; }
         public DbSet<Blog> blogs { get; set; }
         public DbSet<Contact> contacts { get; set; }
+        public DbSet<Cities> cities { get; set; }
         public DbSet<Newsletter> newsletters { get; set; }
 
     }

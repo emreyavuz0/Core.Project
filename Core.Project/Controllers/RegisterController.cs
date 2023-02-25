@@ -9,16 +9,21 @@ namespace Core.Project.Controllers
 {
     public class RegisterController : Controller
     {
+       
+        CitiesManager cm = new CitiesManager(new EfCitiesRepository());
         WriterManager wm = new WriterManager(new EfWriterRepository());
 
         [HttpGet]
         public IActionResult Index()
         {
+            var cty = cm.GetList();
+            ViewBag.Cities = cty;
             return View();
         }
         [HttpPost]
         public IActionResult Index(Writer p)
         {
+            
            
             WriterValidator vm = new WriterValidator();
             ValidationResult results = vm.Validate(p);
@@ -38,6 +43,7 @@ namespace Core.Project.Controllers
             }
             return View();
         }
+ 
       
     }
 }
