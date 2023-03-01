@@ -12,7 +12,7 @@ namespace Core.Project.Controllers
         {
             return View();
         }
-
+        
         [HttpGet]
         public PartialViewResult PartialAddComment()
         {

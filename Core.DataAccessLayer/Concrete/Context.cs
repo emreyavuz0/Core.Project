@@ -12,7 +12,7 @@ namespace Core.DataAccessLayer.Concrete
     {
        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("server=(localdb)\\MSSQLLocalDB;database=CoreDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+            optionsBuilder.UseSqlServer("server=ZED_AIR_CX7\\SQLEXPRESS;database=Core;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         }
 
         public DbSet<Category> categories { get; set; }
