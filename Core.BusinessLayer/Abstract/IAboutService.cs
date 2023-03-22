@@ -10,5 +10,6 @@ namespace Core.BusinessLayer.Abstract
 	public interface IAboutService
 	{
 		List<About> GetList();
+		
 	}
 }

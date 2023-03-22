@@ -38,6 +38,11 @@ namespace Core.BusinessLayer.Concrete
             return _blogDal.GetListWithCategory();
         }
 
+		public List<Blog> GetLast3Blog()
+		{
+			return _blogDal.GetListAll().Take(3).ToList();
+		}
+
         public Blog GetById(int id)
 		{
 			throw new NotImplementedException();

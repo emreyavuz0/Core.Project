@@ -1,11 +1,13 @@
 ﻿using Core.BusinessLayer.Concrete;
 using Core.DataAccessLayer.EntityFramework;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Core.Project.Controllers
 {
     public class BlogController : Controller
     {
+      
         BlogManager bm = new BlogManager(new EfBlogRepository());
         public IActionResult Index()
         {
