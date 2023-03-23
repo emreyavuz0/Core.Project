@@ -12,13 +12,17 @@ namespace Core.Project.Controllers
 {
     public class BlogController : Controller
     {
+
         CategoryManager cm = new CategoryManager(new EfCategoryRepository());
         BlogManager bm = new BlogManager(new EfBlogRepository());
+
+
         public IActionResult Index()
         {
             var values = bm.GetBlogListWithCategory();
             return View(values);
         }
+
 
         public IActionResult BlogReadAll(int id)
         {
@@ -26,11 +30,13 @@ namespace Core.Project.Controllers
             var values = bm.GetBlogById(id);
             return View(values);
         }
+
         public IActionResult BlogListByWriter()
         {
             var values = bm.GetListWithCategoryByWriterBlogManager(1);
             return View(values);
         }
+
         [HttpGet]
         public IActionResult BlogAdd()
         {
@@ -44,6 +50,7 @@ namespace Core.Project.Controllers
             ViewBag.cv = categoryvalue;
             return View();
         }
+
         [HttpPost]
         public IActionResult BlogAdd(Blog p)
         {
@@ -66,12 +73,14 @@ namespace Core.Project.Controllers
             }
             return View();
         }
+
         public IActionResult DeleteBlog(int id) 
         {
             var blogvalue = bm.TGetById(id);
             bm.TDelete(blogvalue);
             return RedirectToAction("BlogListByWriter");
         }
+
         [HttpGet]
         public IActionResult EditBlog(int id) 
         {
@@ -85,6 +94,7 @@ namespace Core.Project.Controllers
             ViewBag.cv = categoryvalue;
             return View(blogvalue);
         }
+
         [HttpPost]
         public IActionResult EditBlog(Blog p)
         {
