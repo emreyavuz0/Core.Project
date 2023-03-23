@@ -23,6 +23,7 @@ namespace Core.DataAccessLayer.Concrete
         public DbSet<Contact> contacts { get; set; }
         public DbSet<Cities> cities { get; set; }
         public DbSet<Newsletter> newsletters { get; set; }
+        public DbSet<BlogRayting> blogRaytings { get; set; }
 
     }
 }
