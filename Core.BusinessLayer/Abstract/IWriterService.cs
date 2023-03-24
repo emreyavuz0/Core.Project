@@ -1,14 +1,10 @@
 ﻿using Core.EntityLayer.Concrete;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Core.BusinessLayer.Abstract
 {
-    public interface IWriterService
+    public interface IWriterService:IGenericService<Writer>
     {
-        void WriterAdd(Writer writer);
+         List<Writer> GetWriterById(int id);
+
     }
 }
